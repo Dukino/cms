@@ -1,3 +1,11 @@
 .panel-body {
     border: 1px solid #ccc;
 }
+
+h2 {
+    margin: 0px 0;
+}
+
+.btn-success {
+    margin: 2.5% 0;
+}
