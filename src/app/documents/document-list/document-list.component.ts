@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+
+import { Document } from '../document.model';
 
 @Component({
   selector: 'app-document-list',
@@ -6,10 +8,45 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./document-list.component.css']
 })
 export class DocumentListComponent implements OnInit {
+  @Output() selectedDocumentEvent = new EventEmitter<Document>();
+  documents: Document[] = [
+    new Document(
+      1,
+      "Document 1",
+      "This is the test description for this document.",
+      "Insert URL here",
+      null
+    ),
+    new Document(
+      2,
+      "Document 2",
+      "This is the test description for this document.",
+      "Insert URL here",
+      null
+    ),
+    new Document(
+      3,
+      "Document 3",
+      "This is the test description for this document.",
+      "Insert URL here",
+      null
+    ),
+    new Document(
+      4,
+      "Document 4",
+      "This is the test description for this document.",
+      "Insert URL here",
+      null
+    )
+  ]
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onSelected(document: Document) {
+    this.selectedDocumentEvent.emit(document);
   }
 
 }
