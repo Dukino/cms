@@ -1,4 +1,7 @@
-<a href="#" class="list-group-item clearfix" (click)="onSelected()">
+<a class="list-group-item clearfix" 
+  style="cursor: pointer;" 
+  [routerLink]="[contact.id]"
+  routerLinkActive="active">
   <div class="panel-body">
     <div class="pull-left">
       <h3 class="list-group-item-heading">{{ contact.name }}</h3>

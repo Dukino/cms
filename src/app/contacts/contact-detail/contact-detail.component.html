@@ -5,8 +5,8 @@
         <div class="panel-heading">
           <h2>{{ contact.name }}</h2> 
         </div>
-        <a class="btn btn-danger pull-right">Delete</a>
-        <a class="btn btn-primary pull-right">Edit</a>
+        <a class="btn btn-danger pull-right" (click)="onDelete()">Delete</a>
+        <a class="btn btn-primary pull-right" [routerLink]="['./edit']">Edit</a>
         <span class="pull-left">
           <img [src]="contact.imageUrl" alt="{{ contact.name }}" class="img-responsive" style="max-height: 100px">
         </span>
@@ -14,7 +14,6 @@
       <div class="panel-body">
         <p>{{ contact.email }}</p>
         <p>{{ contact.phone }}</p>
-
       </div>
     </div>
   </div>
